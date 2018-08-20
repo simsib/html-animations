@@ -3,12 +3,9 @@ console.log(1);
 function loaded() {
     const lever = document.querySelector('.lever');
     let mouseDown = false;
-    var mouseX;
     var mouseY;
 
-    // element X and Y before and after move
-    var elementX = 0;
-    var elementY = 0;
+    var elementY = 20;
     lever.addEventListener('webkitAnimationEnd', function (e) {
         lever.classList.remove('pull-down');
     }, false)
@@ -31,13 +28,13 @@ function loaded() {
             return;
         }
         var deltaY = event.clientY - mouseY;
-        element.style.top = elementY + deltaY + 'px';
+        lever.style.top = elementY + deltaY + 'px';
     }
 
     function onMouseUp(event) {
         console.log(lever);
         mouseDown = false;
-        elementY = parseInt(element.style.top) || 0;
+        elementY = parseInt(lever.style.top) || 0;
         // var deltaY = event.clientY - mouseY;
         // lever.style.transform = `translateY(${160}px)`;
     }

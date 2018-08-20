@@ -113,5 +113,6 @@ li::before {
     width: 18px;
     height: 18px;
     border-radius: 5px;
-    border: 1px solid dodgerblue; 
+	border: 1px solid dodgerblue; 
+	position: absolute;
 }
